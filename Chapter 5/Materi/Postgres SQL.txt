@@ -1,0 +1,54 @@
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+psql --version
+sudo service postgresql status
+sudo service postgresql start
+sudo service postgresql stop
+sudo service postgresql start
+sudo -u postgres psql
+mongosh "mongodb+srv://cluster0.zo9l3.mongodb.net/myFirstDatabase" --apiVersion 1 --username raffizh24
+
+Insert Data
+INSERT INTO nama_table (column) VALUES ()
+
+Read Data
+SELECT * FROM nama_table
+
+Describe Table
+\d+ nama_table
+
+Update Data
+UPDATE nama_table SET column = value WHERE nama_table.id = 1;
+
+Delete Data
+DELETE FROM  articles WHERE id=2;
+
+Install Sequelize
+sudo npm i sequelize-cli -g
+
+Initialize Sequelize di Project
+npm i sequelize
+
+Ganti Password 
+ALTER USER postgres PASSWORD 'postgres';
+
+Migration
+sequelize model:generate --name Article --attributes title:string,body:text,approved:boolean
+
+Connect Database
+\c nama_database;
+
+Connect ElephantSQL
+psql -h host -p password -U user -W
+
+Select
+SELECT * FROM public."nama_table";
+
+Elephant SQL
+"development": {
+    "username": "postgres",
+    "password": "123",
+    "database": "topic_5",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },

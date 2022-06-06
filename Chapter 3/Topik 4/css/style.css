@@ -1,0 +1,20 @@
+@media only screen and (min-width: 600px){
+    body {
+        background-color: cornflowerblue;
+    }
+}
+@media only screen and (min-width: 768px){
+    body {
+        background-color: rebeccapurple;
+    }
+}
+@media only screen and (min-width: 992px){
+    body {
+        background-color: rosybrown;
+    }
+}
+@media only screen and (min-width: 1200px){
+    body {
+        background-color: darkcyan;
+    }
+}

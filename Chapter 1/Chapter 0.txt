@@ -1,0 +1,31 @@
+https://docs.google.com/presentation/d/1qu3lO0JSm1dyxoUJcmdotSqMTHWhmjW2-4I-c_i-e8I/edit#slide=id.g112ddaa6f65_1_0
+https://binaracademy.typeform.com/to/TsOKWJ
+Chapter 0
+Topik 1
+Topik 2
+1) Cara-cara bisnis berbasis internet bikin revenue
+2) Konsep sederhana frontend, backend, dan API
+3) Perbedaan karakteristik project dan product
+Topik 3
+1) Metodologi kerja Agile-Scrum dan bedanya sama Waterfall
+2) Pembuatan roadmap oleh product owner
+3) Persiapan, riset, dan desain oleh UI/UX designer
+4) Pembangunan database, API, dan client-server model oleh backend engineer
+5) Proses aktualisasi desain oleh frontend engineer
+6) Pengertian tentang app testing oleh QA engineer
+7) Bedanya product owner sama scrum master
+8) Kolaborasi pembuatan konsep sampai software staging di dapur app development
+9) Tahapan rilis produk dan environment yang ada dalam SDLC
+Topik 4
+1. Definisi tech stack dan tools
+2. Berbagai jenis tech stack buat Frontend engineer
+3. Berbagai jenis tools buat Frontend engineer
+4. Berbagai jenis tech stack buat Backend engineer
+5. Berbagai jenis tools buat Backend engineer
+7. Perbedaan Frontend engineer dengan Mobile engineer
+8. Berbagai jenis tech stack buat Mobile engineer
+Topik 5 
+1) Bedain bahasa pemrograman, framework, dan library.
+2) Cara nentuin tech stack yang cocok buat produkmu.
+3) Perbandingan tech stack di client-side dan server-side.
+4) Tech stack di database

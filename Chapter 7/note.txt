@@ -1,0 +1,46 @@
+1. Backend 
+- Get Cars : Josie
+- Login : Amara
+- Register : Khansa
+- OAuth : Raffi
+- WhoAmI : Rizal
+
+HEROKU
+DB_USERNAME = jenvokalbesupo 
+DB_PASSWORD = '3a67149e7ca30a59a105d279cc482564aba889d96c94aa46f84e22703ef33ab0'
+DB_HOST = ec2-3-211-221-185.compute-1.amazonaws.com 
+DB_NAME = dh0krjpph33ba
+
+"username": "csqddkyk",
+"password": "212Q5NHJbwkMzCzKYRDj5IK0FSBN6ohD",
+"database": "csqddkyk",
+"host": "satao.db.elephantsql.com",
+"dialect": "postgres"
+"ssl": true
+
+*Login Database
+Username : psql -h satao.db.elephantsql.com -p 5432 -U csqddkyk -W
+Password : 212Q5NHJbwkMzCzKYRDj5IK0FSBN6ohD
+
+*Sequelize
+sequelize model:generate --name Cars --attributes plate:string,manufacture:string,model:string,image:string,rentPerDay:integer,capacity:integer,description:string,availableAt:date,transmission:string,available:boolean,type:string,year:integer,options:array,specs:array
+sequelize model:generate --name Type_Users --attributes type_user:string
+sequelize model:generate --name Users --attributes name:string,email:string,encryptedPassword:string,googleId:string,registeredVia:string,type_user:integer
+
+sequelize seed:generate --name Cars
+
+#Users
+references: {
+	model: "Type_Users",
+	key: "id",
+},
+
+#Users
+models.Users.belongsTo(models.Type_Users, {
+	foreignKey: "type_user"
+});
+
+#Type Users
+models.Type_Users.hasMany(models.Users, {
+	foreignKey: "type_user"
+});

@@ -1,0 +1,75 @@
+*Login Database
+Username : psql -h satao.db.elephantsql.com -p 5432 -U huubwxmi -W
+Password : tBV1A3DxGhju7O_Gzm3OQkiIKFFgW_1N
+
+1. Sequelize
+sequelize model:generate --name Type_Cars --attributes type_car:string && sequelize model:generate --name Type_Users --attributes type:string
+sequelize model:generate --name Cars --attributes id_type:integer,name_car:string,rent_cost:integer,image_car:string && sequelize model:generate --name Users --attributes id_type:integer,email_user:string,password_user:string
+sequelize model:generate --name Activity_Logs --attributes id_car:integer,id_user:integer,activity:string
+
+2. Models
+Cars
+models.Cars.belongsTo(models.Type_Cars, {
+	foreignKey: "id_type",
+});
+models.Cars.hasMany(models.Activity_Logs, {
+	foreignKey: "id_car",
+});
+
+Type Cars
+models.Type_Cars.hasMany(models.Cars, {
+	foreignKey: "id_type",
+});
+
+User
+models.Users.belongsTo(models.Type_Users, {
+	foreignKey: "id_user",
+});
+models.Users.hasMany(models.Activity_Logs, {
+	foreignKey: "id_user",
+});
+
+Type User
+models.Type_Users.hasMany(models.Users, {
+	foreignKey: "id_user",
+});
+
+Activity Logs
+models.Activity_Logs.belongsTo(models.Users, {
+	foreignKey: "id_user",
+});
+models.Activity_Logs.belongsTo(models.Cars, {
+	foreignKey: "id_car",
+});
+
+
+references: {
+	model: "Type_Cars",
+	key: "id",
+},
+
+paranoid: true, // Enable soft delete
+deletedAt: "deletedAt", // Column name to enable soft delete
+
+deletedAt: {
+	type: Sequelize.DATE,
+	allowNull: true,
+},
+
+restore(id) {
+	return postRepository.restore(id);
+},
+
+async list(showDeleted = true) {
+	try {
+		const posts = await postRepository.findAll(showDeleted);
+		const postCount = await postRepository.getTotalPost(showDeleted);
+
+		return {
+			data: posts,
+			count: postCount,
+		};
+	} catch (err) {
+		throw err;
+	}
+},

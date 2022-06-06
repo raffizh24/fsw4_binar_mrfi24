@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "csqddkyk",
+    "password": "212Q5NHJbwkMzCzKYRDj5IK0FSBN6ohD",
+    "database": "csqddkyk",
+    "host": "satao.db.elephantsql.com",
+    "dialect": "postgres",
+    "ssl": true
+  },
+  "test": {
+    "username": null,
+    "password": null,
+    "database": "binar_google_oauth_example_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": null,
+    "password": null,
+    "database": "binar_google_oauth_example_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

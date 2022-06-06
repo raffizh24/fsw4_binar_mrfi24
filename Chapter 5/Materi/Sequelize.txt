@@ -1,0 +1,35 @@
+1. Inisialisasi npm project
+	npm init -y
+2. Instal modul sequelize
+	npm install sequelize
+3. Inisialisasi adapter sequelize
+	sequelize init 
+4. Install adapter pg 
+	npm install pg
+5. Konfigurasi file config
+6. Bikin Table
+	sequelize model:generate --name Cars --attributes name_car:string,rent_cost:integer,image_car:string,id_type:integer
+	sequelize model:generate --name Type_Cars --attributes type_car:string
+7. Migrasi setup database
+	sequelize db:migrate:undo:all
+	sequelize db:migrate
+	psql -h satao.db.elephantsql.com -p 5432 -U gtjqlnid -W
+	zHSWeTpo2M-QPFJyPTZfmUvIcLwp4s3h
+8. Bikin CRUD
+
+#Cars
+references: {
+	model: "Type_Cars",
+	key: "id",
+},
+
+#Cars
+models.Cars.belongsTo(models.Type_Cars, {
+	foreignKey: "id_type",
+	as: "type_car",
+});
+#Type Cars
+models.Type_Cars.hasMany(models.Cars, {
+	foreignKey: "id_type",
+	as: "cars",
+});

@@ -1,0 +1,30 @@
+explorer.exe .
+
+git init
+ssh-keygen
+cat /home/raffizh24/.ssh/id_rsa.pub
+
+git add .
+git add [nama files]
+git commit -m "Nama aktivitas"
+
+git push origin master
+git pull origin master
+git fetch origin master
+
+git remote -v //Liat nama variabel repo gitlab
+git remote add [origin] [SSH Gitlab]
+git config pull.rebase false
+
+git revert  
+git push
+git log --oneline
+pencet q
+
+git clone [SSH Gitlab]
+git branch -a //cek branch 
+git checkout -b [Nama Branch]
+git status //cek ada di branch dimana
+
+cd git collab
+git pull

@@ -1,0 +1,13 @@
+yarn create react-app topic-2
+
+yarn add react-router-dom@6
+npm install react-router-dom@6
+
+3. Fetch
+https://jsonplaceholder.typicode.com/
+https://jsonplaceholder.typicode.com/posts
+
+4. OAuth
+yarn add react-google-login
+https://www.npmjs.com/package/@react-oauth/google
+https://console.cloud.google.com/apis/dashboard

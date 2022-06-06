@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <!-- Aplikasi Ubah Tema -->
+    <h1>Aplikasi Ubah Tema</h1>
+    <div style="margin-bottom: 50px;">
+        <label>Warna Latar</label>
+        <input type="color" id="background-color">
+        <label>Warna Huruf</label>
+        <input type="color" id="text-color">
+    </div>
+
+    <!-- Element with id app -->
+    <div id="app"></div>
+
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, blanditiis amet necessitatibus omnis fugit asperiores, aliquid rerum laborum excepturi deserunt, error molestias architecto quia non dicta adipisci perspiciatis explicabo nisi?</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, blanditiis amet necessitatibus omnis fugit asperiores, aliquid rerum laborum excepturi deserunt, error molestias architecto quia non dicta adipisci perspiciatis explicabo nisi?</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, blanditiis amet necessitatibus omnis fugit asperiores, aliquid rerum laborum excepturi deserunt, error molestias architecto quia non dicta adipisci perspiciatis explicabo nisi?</p>
+
+    <!-- JavaScript code to fill the app id -->
+    <script type="text/javascript">
+        var app = document.getElementById('app');
+        app.innerHTML = 'Hello World';
+
+        // --------------------------------------------------
+
+        var paragraph = document.getElementsByClassName('paragraph');
+        setTimeout(function() {
+            paragraph[0].style.color = '#333';
+            paragraph[1].style.color = '#333';
+            paragraph[2].style.color = '#333';
+        }, 5000);
+
+        // --------------------------------------------------
+
+        var title = document.createElement('h1');
+        title.textContent = 'Add element from DOM';
+        document.body.append(title);
+        setTimeout(function() {
+            title.remove();
+        }, 3000);
+
+        // --------------------------------------------------
+
+        var backgroundColor = document.getElementById('background-color');
+        var textColor = document.getElementById('text-color');
+        backgroundColor.addEventListener('change', function() {
+            document.body.style.backgroundColor = backgroundColor.value;
+        });
+        textColor.addEventListener('change', function() {
+            document.body.style.color = textColor.value;
+        });
+
+        // --------------------------------------------------
+    </script>
+    <!-- End -->
+</body>
+</html>
