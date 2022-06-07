@@ -1,10 +1,10 @@
 const request = require("supertest");
 const app = require("../../../app");
+const email = `member${Math.random().toString().substring(12)}@gmail.com`;
 
 describe("POST /v1/auth/register", () => {
     it("should response with 201 as status code", async () => {
         const name = "Hello";
-        const email = `member${Math.random().toString().substring(12)}@gmail.com`;
         const password = "123";
 
         return request(app)
@@ -23,7 +23,6 @@ describe("POST /v1/auth/register", () => {
 
     it("should response with 422 as status code", async () => {
         const name = "Member";
-        const email = "member@gmail.com";
         const password = "123";
 
         return request(app)
